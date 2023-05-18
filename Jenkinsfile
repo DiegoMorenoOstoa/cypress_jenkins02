@@ -1,7 +1,10 @@
 pipeline {
     agent any
 
-    tools {nodejs "node"}
+    node {
+    checkout scm
+    /* .. snip .. */
+}
 
     stages {
 
