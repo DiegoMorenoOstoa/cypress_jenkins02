@@ -1,0 +1,14 @@
+name: Cypress Test
+on: [push]
+jobs: 
+  Cypress-run:
+    runs-on: ubuntu-leatest
+    -name: Checkout
+      uses: actions/checkout@v3.5.2
+
+        
+      
+      
+    
+    
+  
