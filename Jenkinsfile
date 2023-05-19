@@ -13,9 +13,7 @@ pipeline {
                     }
 
                     steps {
-                        bat 'git --version'
-
-                    
+                        echo 'prueba01'
                     }
                 }
                 stage('Slave 2') {
@@ -23,9 +21,7 @@ pipeline {
                         label "Agente02_2"
                     }
                     steps {
-                        git branch: 'main', url: 'https://github.com/DiegoMorenoOstoa/cypress_jenkins02.git'
-                        bat 'npm install'
-                        bat 'npx cypress run cypress run --record --key 776deb98-57d5-4221-bac7-61a4d7889e25  --parallel'
+                        echo 'prueba02'
                     
                     }
                 }
