@@ -13,11 +13,8 @@ pipeline {
                     }
 
                     steps {
-                        bat 'npm install'
-                        bat 'npm install --save npm-git-install'
-                        bat 'git init'
-                        git branch: 'main', url: 'https://github.com/DiegoMorenoOstoa/cypress_jenkins02.git'
-                        bat 'npx cypress run cypress run --record --key 776deb98-57d5-4221-bac7-61a4d7889e25  --parallel'
+                        bat 'git --version'
+
                     
                     }
                 }
