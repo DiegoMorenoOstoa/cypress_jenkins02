@@ -4,15 +4,29 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      # don't fail the entire matrix on failure
+      fail-fast: false
+      matrix:
+        # run copies of the current job in parallel
+        containers: [1, 2, 3, 4, 5]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Download the build folder
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v4
         with:
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
+          build: npm run build
+          record: true
+          parallel: true
           start: npx cypress run --record --key 8e2d8cfe-3297-4ce5-8afb-74ad2b7c4994 
           
 
