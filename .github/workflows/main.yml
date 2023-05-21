@@ -13,7 +13,7 @@ jobs:
         with:
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-          start: npx cypress run --record --key 8e2d8cfe-3297-4ce5-8afb-74ad2b7c4994 --paralell
+          start: npx cypress run --record --key 8e2d8cfe-3297-4ce5-8afb-74ad2b7c4994 
           
 
         
